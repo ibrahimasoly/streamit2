@@ -168,11 +168,12 @@ if st.button("Predict"):
 
         y=model.predict(np.array(list).reshape(1,-1))
         b=""
-        if(y==0):
-            b="yes"
+        if(y==1):
+            b="Yes"
+            st.write(f"{b} this individuals are most likely to have or use a bank account")
         else:
-            b="no"
-        st.write(f"{b} this individuals are most likely to have or use a bank account")
+            b="No"
+            st.write(f"{b} this individuals are not most likely to have or use a bank account")
         st.success("Form successfully submitted!")
     else:
         st.error("Please fill in all required fields.")
